@@ -9,7 +9,7 @@ int n; // SCV 개수
 int arr[3]; // SCV 체력
 int visited[MAX_NUM + 1][MAX_NUM + 1][MAX_NUM + 1]; // 방문체크
 
-void debug(){
+void debug(){ // 이딴 디버그 필요없다.
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= n; j++)
@@ -25,7 +25,7 @@ void debug(){
     cout << endl << endl;
 }
 
-void sort_two(int& a, int& b){
+void sort_two(int& a, int& b){ // 두 수 정렬
     if(a < 0) a = 0;
     if(b < 0) b = 0;
 
@@ -33,13 +33,14 @@ void sort_two(int& a, int& b){
         int t = a;
         a = b;
         b = t;
-    }
+    } // 정렬
 } // sort_two()
 
-void sort_three(int& a, int& b, int& c){
+void sort_three(int& a, int& b, int& c){ // 세 수 정렬
     if(a < 0) a = 0;
     if(b < 0) b = 0;
     if(c < 0) c = 0;
+    // 음수인데 방문체크하면 인덱스 벗어나니까 음수는 전부 0으로 처리.
 
     int arr[3] = {a, b, c};
     sort(arr, arr+ 3);
@@ -47,10 +48,11 @@ void sort_three(int& a, int& b, int& c){
     a = arr[0];
     b = arr[1];
     c = arr[2];
+    // 정렬
 } // sort_three()
 
 
-void input(){
+void input(){ // 입력
     cin >> n;
     for (int i = 0; i < n; i++)
     {
